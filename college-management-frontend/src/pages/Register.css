@@ -1,0 +1,208 @@
+
+.register-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f7fa 0%, #e0e6fd 100%);
+  animation: backgroundShift 15s ease-in-out infinite;
+}
+
+.register-container::before,
+.register-container::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 180px;
+  height: 180px;
+  opacity: 0.12;
+  filter: blur(1px) drop-shadow(0 8px 32px rgba(99, 102, 241, 0.12));
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.register-container::before {
+  background: url('https://assets.codepen.io/1468070/Animated+Shape+Background-2.svg') center/cover;
+  top: 10%;
+  left: 7%;
+  animation: floatIcon1 20s ease-in-out infinite alternate;
+}
+
+.register-container::after {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
+  bottom: 10%;
+  right: 7%;
+  animation: floatIcon2 24s ease-in-out infinite alternate;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+  z-index: 2;
+}
+
+.register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.register-form h1 {
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.register-form h1:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
+  border-radius: 2px;
+}
+
+.register-input {
+  width: 94%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #222222;
+  transition: all 0.3s ease;
+  background-color: rgba(247, 250, 252, 0.8);
+}
+
+.register-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  background-color: white;
+}
+
+.register-input::placeholder {
+  color: #a0aec0;
+}
+
+.register-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.1);
+  margin-top: 0.5rem;
+}
+
+.register-button:hover {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(99, 102, 241, 0.15);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.error-message {
+  color: #ef4444;
+  background-color: #fef2f2;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid #fee2e2;
+}
+
+.success-message {
+  color: #10b981;
+  background-color: #ecfdf5;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid #d1fae5;
+}
+
+@media (max-width: 480px) {
+  .register-form {
+    width: 85%;
+    padding: 1.75rem;
+  }
+  
+  .register-form h1 {
+    font-size: 1.75rem;
+  }
+}
+.register-footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.register-link {
+  color: #6366f1;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.register-link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+.password-wrapper {
+  position: relative;
+  width: 94%;
+  margin-bottom: 1.5rem;
+}
+
+.password-wrapper .register-input {
+  width: 95%;
+  padding-right: 2.5rem; 
+}
+
+.password-toggle {
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  font-size: 1.2rem;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #4f46e5;
+}   
