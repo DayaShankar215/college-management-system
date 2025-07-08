@@ -8,7 +8,7 @@ exports.getDashboard = async (req, res) => {
   }
 
   try {
-    // Get teacher basic info
+ 
     const [teacherResults] = await db.promise().query(
       "SELECT name, department FROM teachers WHERE id = ?",
       [teacherId]
@@ -20,7 +20,7 @@ exports.getDashboard = async (req, res) => {
 
     const { name, department } = teacherResults[0];
 
-    // Get courses taught by the teacher with student counts
+   
     const [courseResults] = await db.promise().query(
       `SELECT 
         c.id, 
@@ -35,7 +35,7 @@ exports.getDashboard = async (req, res) => {
       [teacherId]
     );
 
-    // Get upcoming events for the teacher's courses
+    
     const [eventResults] = await db.promise().query(
       `SELECT 
         e.id, 

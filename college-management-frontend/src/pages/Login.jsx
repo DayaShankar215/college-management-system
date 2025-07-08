@@ -59,7 +59,6 @@ function Login() {
         return;
       }
 
-      // Redirect based on role
       if (response.data.role === 'teacher') {
         navigate("/teacher-dashboard");
       } else {

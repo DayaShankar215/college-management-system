@@ -21,7 +21,7 @@ function Register() {
     setError("");
     setSuccess("");
 
-    // Validation
+    
     if (!name || !email || !password || !confirmPassword) {
       setError("Please fill all fields");
       return;
@@ -48,17 +48,17 @@ function Register() {
 
       const response = await axios.post(`http://localhost:5000${endpoint}`, data);
 
-      // Show success message
+    
       setSuccess(response.data.message || "Registration successful!");
 
-      // Clear form fields
+   
       setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
       setDepartment("");
 
-      // Redirect to login after 2 seconds
+      
       setTimeout(() => {
         navigate("/login");
       }, 2000);

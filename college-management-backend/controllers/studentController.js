@@ -34,7 +34,7 @@ exports.getDashboard = async (req, res) => {
       [studentId]
     );
 
-    // Get upcoming events for the student's courses
+
     const [eventResults] = await db.promise().query(
       `SELECT 
         e.id, 

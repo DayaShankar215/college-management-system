@@ -27,7 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           
-          {/* Protected routes */}
+        
           <Route
             path="/dashboard"
             element={
@@ -45,7 +45,7 @@ function App() {
             }
           />
           
-          {/* Default route redirect */}
+      
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </div>
